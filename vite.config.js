@@ -1,9 +1,9 @@
 export default {
+  assetsInclude: ['**/*.hdr'],
   root: 'src',
   base: './',
-  
   build: {
-    "build": "vite build --outDir ../dist --emptyOutDir"
+    outDir: '../dist'
   },
   server: {
     host: true

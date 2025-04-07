@@ -1,11 +1,13 @@
 import * as THREE from './modules/three.module.js';
 import { OrbitControls } from './modules/OrbitControls.js';
 import { RGBELoader } from './modules/RGBELoader.js';
+import brownStudio from './images/brown_photostudio_01_4k.hdr';
+import countryHall from './images/studio_country_hall_4k.hdr';
 
 const panoramaPoints = [
   {
     id: 'point1',
-    url: './images/brown_photostudio_01_4k.hdr',
+    url: brownStudio,
     connections: [
       { 
         target: 'point2', 
@@ -24,7 +26,7 @@ const panoramaPoints = [
   },
   {
     id: 'point2',
-    url: './images/studio_country_hall_4k.hdr',
+    url: countryHall,
     connections: [
       { 
         target: 'point1', 

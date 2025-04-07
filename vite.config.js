@@ -3,7 +3,7 @@ export default {
   base: './',
   
   build: {
-    "build": "vite build --outDir ./dist --emptyOutDir"
+    "build": "vite build --outDir ../dist --emptyOutDir"
   },
   server: {
     host: true

@@ -1,8 +1,11 @@
 export default {
-    root: 'src',
-    base: './',
-    server: {
-      host: true
-    }
-  }
+  root: 'src',
+  base: './',
   
+  build: {
+    outDir: 'dist'
+  },
+  server: {
+    host: true
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "panorama-360-viewer",
+  "version": "1.0.0",
+  "description": "Ứng dụng hiển thị ảnh panorama 360 độ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "panorama",
+    "360",
+    "three.js",
+    "panolens.js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

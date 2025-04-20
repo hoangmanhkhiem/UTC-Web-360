@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+}
+
+#panorama-container {
+    width: 100%;
+    height: 100vh;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-text {
+    color: white;
+    font-size: 18px;
+}
+
+#error-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#error-message p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#retry-button {
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#retry-button:hover {
+    background-color: #0b7dda;
+}
+
+#controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    gap: 10px;
+    z-index: 100;
+}
+
+#controls button {
+    padding: 8px 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#status {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 100;
+}
+    /* Các mũi tên hotspot đã có */
+    .arrow-hotspot {
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 128, 255, 0.5);
+        border-radius: 20px;
+        transition: background-color 0.3s;
+    }
+    .arrow-hotspot:hover {
+        background-color: rgba(0, 128, 255, 0.8);
+    }
+    
+    /* CSS cho bảng điều khiển mới */
+    #custom-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        display: grid;
+        grid-template-columns: repeat(3, 50px);
+        grid-template-rows: repeat(3, 50px);
+        grid-gap: 5px;
+    }
+    
+    .control-button {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .control-button:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+    }
+    
+    /* Vị trí các nút */
+    #pan-up { grid-column: 2; grid-row: 1; }
+    #pan-left { grid-column: 1; grid-row: 2; }
+    #pan-right { grid-column: 3; grid-row: 2; }
+    #pan-down { grid-column: 2; grid-row: 3; }
+    #zoom-in { grid-column: 3; grid-row: 1; }
+    #zoom-out { grid-column: 3; grid-row: 3; }
+    #fullscreen { grid-column: 1; grid-row: 1; }
+    
+    /* CSS cho mũi tên */
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 6px;
+    }
+    
+    .up { transform: rotate(-135deg); }
+    .down { transform: rotate(45deg); }
+    .left { transform: rotate(135deg); }
+    .right { transform: rotate(-45deg); }
+    
+    .expand {
+        position: relative;
+        width: 15px;
+        height: 15px;
+    }
+    
+    .expand:before,
+    .expand:after {
+        content: '';
+        position: absolute;
+        background: white;
+    }
+    
+    .expand:before {
+        width: 15px;
+        height: 3px;
+        top: 6px;
+        left: 0;
+    }
+    
+    .expand:after {
+        width: 3px;
+        height: 15px;
+        top: 0;
+        left: 6px;
+    }

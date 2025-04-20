@@ -4,8 +4,8 @@
   "description": "Ứng dụng hiển thị ảnh panorama 360 độ",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js"
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js"
   },
   "keywords": [
     "panorama",
